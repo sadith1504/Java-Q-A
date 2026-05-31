@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Java简答题复习套卷</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #eef2f5;
+        font-family: "Segoe UI", "Roboto", "Noto Sans", system-ui, sans-serif;
+        padding: 40px 20px;
+        line-height: 1.55;
+      }
+      .paper {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 48px 52px;
+      }
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+          margin: 0;
+        }
+        .paper {
+          box-shadow: none;
+          padding: 0.6in;
+          max-width: 100%;
+          border-radius: 0;
+        }
+        .question {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+      }
+      h1 {
+        font-size: 28px;
+        color: #1a4d8c;
+        border-left: 5px solid #1a4d8c;
+        padding-left: 18px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      .sub {
+        color: #3a5478;
+        border-bottom: 1px solid #cbdde6;
+        padding-bottom: 10px;
+        margin-bottom: 28px;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .question {
+        margin-bottom: 26px;
+      }
+      .q-title {
+        font-weight: 800;
+        font-size: 17px;
+        color: #0b3b5f;
+        background: #e9f0f6;
+        display: inline-block;
+        padding: 3px 14px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        letter-spacing: 0.3px;
+      }
+      .q-body {
+        padding-left: 16px;
+        color: #1f2d3d;
+        font-size: 15px;
+      }
+      .answer {
+        margin-top: 8px;
+        margin-bottom: 6px;
+        padding-left: 12px;
+        border-left: 2px solid #7f9fc7;
+      }
+      strong {
+        color: #0c4e6e;
+      }
+      .code {
+        background: #f0f3f8;
+        padding: 0 5px;
+        border-radius: 10px;
+        font-family: "JetBrains Mono", "Cascadia Code", monospace;
+        font-size: 13.5px;
+      }
+      hr {
+        margin: 16px 0;
+        border: 0;
+        height: 1px;
+        background: #d4e0e9;
+      }
+      footer {
+        margin-top: 38px;
+        text-align: center;
+        font-size: 12px;
+        color: #6c86a3;
+        border-top: 1px solid #dce5ef;
+        padding-top: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper">
+      <h1>Java 简答题 · 核心复习套卷</h1>
+      <div class="sub">
+        <span>共 23 题 </span>
+      </div>
+
+      <div class="question">
+        <div class="q-title">01</div>
+        <div class="q-body">
+          <strong>Java 应用程序与小程序之间有哪些区别？</strong>
+          <div class="answer">
+            Application：包含 main 方法，可独立运行，无需继承特定类。<br />Applet：无
+            main 方法，必须继承 Applet 类，无法独立运行，需要浏览器或
+            appletviewer 工具执行。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">02</div>
+        <div class="q-body">
+          <strong>成员变量与局部变量的区别有哪些？</strong>
+          <div class="answer">
+            定义位置：成员变量定义在类中；局部变量定义在方法、代码块或形参列表中。<br />内存位置：成员变量存于堆
+            / 方法区；局部变量存于栈内存。<br />默认值：成员变量有系统默认值；局部变量无默认值，必须手动初始化。<br />作用域：成员变量作用域为整个类；局部变量仅在当前方法
+            / 代码块内有效。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">03</div>
+        <div class="q-body">
+          <strong>什么是“多态”机制？Java 语言中是如何实现多态的？</strong>
+          <div class="answer">
+            多态：指同一个行为，作用在不同对象上会产生不同执行结果。<br />实现条件：存在继承关系、对子类方法进行重写、使用父类引用指向子类对象。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">04</div>
+        <div class="q-body">
+          <strong
+            >构造方法的作用？若类中没有声明构造方法，程序能正确执行吗？为什么？</strong
+          >
+          <div class="answer">
+            构造方法作用：创建对象，同时初始化类的成员变量。<br />可以正常执行。原因：当类中没有手动定义构造方法时，编译器会自动生成一个默认无参构造方法。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">05</div>
+        <div class="q-body">
+          <strong>什么是套接字？其作用是什么？</strong>
+          <div class="answer">
+            套接字：网络通信的端点，由 IP 地址 + 端口号组合而成。<br />作用：实现不同设备上应用程序之间的数据通信与传输。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">06</div>
+        <div class="q-body">
+          <strong
+            >什么是包？它的作用是什么？如何创建包？如何应用包中的类？</strong
+          >
+          <div class="answer">
+            包：是管理类的命名空间，对应操作系统中的文件夹。<br />作用：分类管理类、避免类名重复、实现访问权限控制。<br />创建包：在
+            Java 源文件第一行编写代码 package 包名;<br />使用包中类：通过 import
+            语句导入，或直接书写完整包名 + 类名。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">07</div>
+        <div class="q-body">
+          <strong>公共成员与私有成员有何区别？</strong>
+          <div class="answer">
+            公共成员（public）：任意位置都可访问，能够被子类继承。<br />私有成员（private）：仅当前类内部可以访问，子类、外部类均无法直接访问。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">08</div>
+        <div class="q-body">
+          <strong>什么是字节码？采用字节码的最大好处是什么？</strong>
+          <div class="answer">
+            字节码：Java 源文件（.java）编译后生成的 .class 文件，是 JVM
+            可识别的中间指令。<br />最大好处：实现跨平台，做到一次编写，到处运行。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">09</div>
+        <div class="q-body">
+          <strong>什么是流？Java 语言中分为哪两种流？这两种流有何差异？</strong>
+          <div class="answer">
+            流：数据传输的通道，用于程序读写数据。<br />字节流：以字节为单位读写，可处理图片、视频、文本等所有类型文件。<br />字符流：以字符为单位读写，仅处理纯文本文件，自带编码转换功能。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">10</div>
+        <div class="q-body">
+          <strong>什么是平台无关性？Java 语言中是怎样实现平台无关性的？</strong>
+          <div class="answer">
+            平台无关性：同一套代码，无需修改、重新编译，即可在不同操作系统上运行。<br />实现方式：源码编译为与平台无关的字节码（.class）；不同系统安装对应版本
+            JVM，由 JVM 解析执行字节码，屏蔽系统差异。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">11</div>
+        <div class="q-body">
+          <strong>静态变量与实例变量有哪些不同？</strong>
+          <div class="answer">
+            修饰符：静态变量用 static 修饰；实例变量无 static 修饰。<br />归属：静态变量属于类；实例变量属于对象。<br />共享性：静态变量被所有对象共享；实例变量为每个对象独有。<br />调用方式：静态变量通过类名调用；实例变量必须通过对象调用。<br />内存位置：静态变量存于方法区；实例变量存于堆内存。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">12</div>
+        <div class="q-body">
+          <strong
+            >Java
+            语言中定义的三个标准输入输出流是什么？它们对应什么设备？</strong
+          >
+          <div class="answer">
+            System.in：标准输入流，对应设备为键盘。<br />System.out：标准输出流，对应设备为控制台。<br />System.err：标准错误输出流，对应设备为控制台。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">13</div>
+        <div class="q-body">
+          <strong>什么情况下必须以类实现 Runnable 接口来创建线程？</strong>
+          <div class="answer">
+            Java 是单继承语言，当当前类已经继承了其他父类，无法再继承 Thread
+            类时，必须实现 Runnable 接口创建线程。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">14</div>
+        <div class="q-body">
+          <strong>Java 语言中的网络编程分为哪几个层次？</strong>
+          <div class="answer">
+            传输层：Socket 编程，基于 TCP、UDP 协议，实现底层数据通信。<br />应用层：URL
+            编程，基于 HTTP 等协议，直接访问网络资源。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">15</div>
+        <div class="q-body">
+          <strong>Java 语言程序有哪两种？它们的主类有哪些不同？</strong>
+          <div class="answer">
+            Java 应用程序（Application）：主类包含 main
+            方法，可独立运行，无需继承其他类。<br />Java
+            小程序（Applet）：主类无 main 方法，必须继承 Applet，不能独立运行。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">16</div>
+        <div class="q-body">
+          <strong>Java 语言定义了哪些基本数据类型？各占几个字节？</strong>
+          <div class="answer">
+            共 8 种基本数据类型：byte(1), short(2), int(4), long(8), float(4),
+            double(8), char(2), boolean(1字节处理)
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">17</div>
+        <div class="q-body">
+          <strong
+            >为什么程序的多线程功能是必要的？Java
+            语言中实现多线程的方法有哪两种？</strong
+          >
+          <div class="answer">
+            多线程的作用：提升 CPU 利用率、实现并发处理、提升程序响应速度。<br />两种实现方式：继承
+            Thread 类、实现 Runnable 接口。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">18</div>
+        <div class="q-body">
+          <strong>写出至少 5 个 Java 语言中的常用包</strong>
+          <div class="answer">
+            java.lang, java.util, java.io, java.net, java.sql, javax.swing 等。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">19</div>
+        <div class="q-body">
+          <strong
+            >JDBC 中 DriverManager、Connection、Statement 和 ResultSet
+            接口的功能？</strong
+          >
+          <div class="answer">
+            DriverManager：加载数据库驱动，获取数据库连接。<br />Connection：代表数据库连接会话，用于创建语句对象。<br />Statement：负责执行
+            SQL 语句。<br />ResultSet：封装查询返回的数据结果，提供数据遍历读取功能。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">20</div>
+        <div class="q-body">
+          <strong>面向对象编程中，什么是封装？</strong>
+          <div class="answer">
+            将类的成员变量私有化，隐藏内部实现细节，对外提供公共访问方法，以此保护数据安全。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">21</div>
+        <div class="q-body">
+          <strong>如何使用 JDK 编译与运行 Java 小程序？</strong>
+          <div class="answer">
+            编译：执行命令 javac 文件名.java，生成 class 字节码文件。<br />运行：编写
+            HTML 文件嵌入小程序代码，执行 appletviewer 文件名.html 运行。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">22</div>
+        <div class="q-body">
+          <strong>Java 语言中什么是构造方法？构造方法有什么作用？</strong>
+          <div class="answer">
+            构造方法：方法名与类名完全相同，没有返回值类型的特殊方法。<br />作用：创建类的对象、初始化对象的成员变量。
+          </div>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-title">23</div>
+        <div class="q-body">
+          <strong>使用 JDBC 开发数据库应用程序的主要步骤？</strong>
+          <div class="answer">
+            加载数据库驱动 → 获取数据库连接 → 创建语句对象 → 执行 SQL 语句 →
+            处理查询结果 → 关闭相关资源。
+          </div>
+        </div>
+      </div>
+
+      <footer>Java 核心简答题 · 复习专用</footer>
+    </div>
+  </body>
+</html>
