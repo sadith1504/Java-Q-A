@@ -1,381 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Java简答题复习套卷</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        background-color: #eef2f5;
-        font-family: "Segoe UI", "Roboto", "Noto Sans", system-ui, sans-serif;
-        padding: 40px 20px;
-        line-height: 1.55;
-      }
-      .paper {
-        max-width: 1000px;
-        margin: 0 auto;
-        background: white;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-        padding: 48px 52px;
-      }
-      @media print {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-          background: white;
-          padding: 0;
-          margin: 0;
+            background-color: #eef2f5;
+            font-family: 'Segoe UI', 'Roboto', 'Noto Sans', system-ui, sans-serif;
+            padding: 40px 20px;
+            line-height: 1.55;
         }
         .paper {
-          box-shadow: none;
-          padding: 0.6in;
-          max-width: 100%;
-          border-radius: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            padding: 48px 52px;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.6in;
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .question {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+        h1 {
+            font-size: 28px;
+            color: #1a4d8c;
+            border-left: 5px solid #1a4d8c;
+            padding-left: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .sub {
+            color: #3a5478;
+            border-bottom: 1px solid #cbdde6;
+            padding-bottom: 10px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
         }
         .question {
-          break-inside: avoid;
-          page-break-inside: avoid;
+            margin-bottom: 26px;
         }
-      }
-      h1 {
-        font-size: 28px;
-        color: #1a4d8c;
-        border-left: 5px solid #1a4d8c;
-        padding-left: 18px;
-        margin-bottom: 10px;
-        font-weight: 700;
-      }
-      .sub {
-        color: #3a5478;
-        border-bottom: 1px solid #cbdde6;
-        padding-bottom: 10px;
-        margin-bottom: 28px;
-        font-size: 14px;
-        display: flex;
-        justify-content: space-between;
-      }
-      .question {
-        margin-bottom: 26px;
-      }
-      .q-title {
-        font-weight: 800;
-        font-size: 17px;
-        color: #0b3b5f;
-        background: #e9f0f6;
-        display: inline-block;
-        padding: 3px 14px;
-        border-radius: 20px;
-        margin-bottom: 10px;
-        letter-spacing: 0.3px;
-      }
-      .q-body {
-        padding-left: 16px;
-        color: #1f2d3d;
-        font-size: 15px;
-      }
-      .answer {
-        margin-top: 8px;
-        margin-bottom: 6px;
-        padding-left: 12px;
-        border-left: 2px solid #7f9fc7;
-      }
-      strong {
-        color: #0c4e6e;
-      }
-      .code {
-        background: #f0f3f8;
-        padding: 0 5px;
-        border-radius: 10px;
-        font-family: "JetBrains Mono", "Cascadia Code", monospace;
-        font-size: 13.5px;
-      }
-      hr {
-        margin: 16px 0;
-        border: 0;
-        height: 1px;
-        background: #d4e0e9;
-      }
-      footer {
-        margin-top: 38px;
-        text-align: center;
-        font-size: 12px;
-        color: #6c86a3;
-        border-top: 1px solid #dce5ef;
-        padding-top: 18px;
-      }
+        .q-title {
+            font-weight: 800;
+            font-size: 17px;
+            color: #0b3b5f;
+            background: #e9f0f6;
+            display: inline-block;
+            padding: 3px 14px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+        .q-body {
+            padding-left: 16px;
+            color: #1f2d3d;
+            font-size: 15px;
+        }
+        .answer {
+            margin-top: 8px;
+            margin-bottom: 6px;
+            padding-left: 12px;
+            border-left: 2px solid #7f9fc7;
+        }
+        strong {
+            color: #0c4e6e;
+        }
+        .code {
+            background: #f0f3f8;
+            padding: 0 5px;
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+            font-size: 13.5px;
+        }
+        hr {
+            margin: 16px 0;
+            border: 0;
+            height: 1px;
+            background: #d4e0e9;
+        }
+        footer {
+            margin-top: 38px;
+            text-align: center;
+            font-size: 12px;
+            color: #6c86a3;
+            border-top: 1px solid #dce5ef;
+            padding-top: 18px;
+        }
     </style>
-  </head>
-  <body>
-    <div class="paper">
-      <h1>Java 简答题 · 核心复习套卷</h1>
-      <div class="sub">
-        <span>共 23 题 </span>
-      </div>
-
-      <div class="question">
-        <div class="q-title">01</div>
-        <div class="q-body">
-          <strong>Java 应用程序与小程序之间有哪些区别？</strong>
-          <div class="answer">
-            Application：包含 main 方法，可独立运行，无需继承特定类。<br />Applet：无
-            main 方法，必须继承 Applet 类，无法独立运行，需要浏览器或
-            appletviewer 工具执行。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">02</div>
-        <div class="q-body">
-          <strong>成员变量与局部变量的区别有哪些？</strong>
-          <div class="answer">
-            定义位置：成员变量定义在类中；局部变量定义在方法、代码块或形参列表中。<br />内存位置：成员变量存于堆
-            / 方法区；局部变量存于栈内存。<br />默认值：成员变量有系统默认值；局部变量无默认值，必须手动初始化。<br />作用域：成员变量作用域为整个类；局部变量仅在当前方法
-            / 代码块内有效。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">03</div>
-        <div class="q-body">
-          <strong>什么是“多态”机制？Java 语言中是如何实现多态的？</strong>
-          <div class="answer">
-            多态：指同一个行为，作用在不同对象上会产生不同执行结果。<br />实现条件：存在继承关系、对子类方法进行重写、使用父类引用指向子类对象。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">04</div>
-        <div class="q-body">
-          <strong
-            >构造方法的作用？若类中没有声明构造方法，程序能正确执行吗？为什么？</strong
-          >
-          <div class="answer">
-            构造方法作用：创建对象，同时初始化类的成员变量。<br />可以正常执行。原因：当类中没有手动定义构造方法时，编译器会自动生成一个默认无参构造方法。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">05</div>
-        <div class="q-body">
-          <strong>什么是套接字？其作用是什么？</strong>
-          <div class="answer">
-            套接字：网络通信的端点，由 IP 地址 + 端口号组合而成。<br />作用：实现不同设备上应用程序之间的数据通信与传输。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">06</div>
-        <div class="q-body">
-          <strong
-            >什么是包？它的作用是什么？如何创建包？如何应用包中的类？</strong
-          >
-          <div class="answer">
-            包：是管理类的命名空间，对应操作系统中的文件夹。<br />作用：分类管理类、避免类名重复、实现访问权限控制。<br />创建包：在
-            Java 源文件第一行编写代码 package 包名;<br />使用包中类：通过 import
-            语句导入，或直接书写完整包名 + 类名。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">07</div>
-        <div class="q-body">
-          <strong>公共成员与私有成员有何区别？</strong>
-          <div class="answer">
-            公共成员（public）：任意位置都可访问，能够被子类继承。<br />私有成员（private）：仅当前类内部可以访问，子类、外部类均无法直接访问。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">08</div>
-        <div class="q-body">
-          <strong>什么是字节码？采用字节码的最大好处是什么？</strong>
-          <div class="answer">
-            字节码：Java 源文件（.java）编译后生成的 .class 文件，是 JVM
-            可识别的中间指令。<br />最大好处：实现跨平台，做到一次编写，到处运行。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">09</div>
-        <div class="q-body">
-          <strong>什么是流？Java 语言中分为哪两种流？这两种流有何差异？</strong>
-          <div class="answer">
-            流：数据传输的通道，用于程序读写数据。<br />字节流：以字节为单位读写，可处理图片、视频、文本等所有类型文件。<br />字符流：以字符为单位读写，仅处理纯文本文件，自带编码转换功能。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">10</div>
-        <div class="q-body">
-          <strong>什么是平台无关性？Java 语言中是怎样实现平台无关性的？</strong>
-          <div class="answer">
-            平台无关性：同一套代码，无需修改、重新编译，即可在不同操作系统上运行。<br />实现方式：源码编译为与平台无关的字节码（.class）；不同系统安装对应版本
-            JVM，由 JVM 解析执行字节码，屏蔽系统差异。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">11</div>
-        <div class="q-body">
-          <strong>静态变量与实例变量有哪些不同？</strong>
-          <div class="answer">
-            修饰符：静态变量用 static 修饰；实例变量无 static 修饰。<br />归属：静态变量属于类；实例变量属于对象。<br />共享性：静态变量被所有对象共享；实例变量为每个对象独有。<br />调用方式：静态变量通过类名调用；实例变量必须通过对象调用。<br />内存位置：静态变量存于方法区；实例变量存于堆内存。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">12</div>
-        <div class="q-body">
-          <strong
-            >Java
-            语言中定义的三个标准输入输出流是什么？它们对应什么设备？</strong
-          >
-          <div class="answer">
-            System.in：标准输入流，对应设备为键盘。<br />System.out：标准输出流，对应设备为控制台。<br />System.err：标准错误输出流，对应设备为控制台。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">13</div>
-        <div class="q-body">
-          <strong>什么情况下必须以类实现 Runnable 接口来创建线程？</strong>
-          <div class="answer">
-            Java 是单继承语言，当当前类已经继承了其他父类，无法再继承 Thread
-            类时，必须实现 Runnable 接口创建线程。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">14</div>
-        <div class="q-body">
-          <strong>Java 语言中的网络编程分为哪几个层次？</strong>
-          <div class="answer">
-            传输层：Socket 编程，基于 TCP、UDP 协议，实现底层数据通信。<br />应用层：URL
-            编程，基于 HTTP 等协议，直接访问网络资源。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">15</div>
-        <div class="q-body">
-          <strong>Java 语言程序有哪两种？它们的主类有哪些不同？</strong>
-          <div class="answer">
-            Java 应用程序（Application）：主类包含 main
-            方法，可独立运行，无需继承其他类。<br />Java
-            小程序（Applet）：主类无 main 方法，必须继承 Applet，不能独立运行。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">16</div>
-        <div class="q-body">
-          <strong>Java 语言定义了哪些基本数据类型？各占几个字节？</strong>
-          <div class="answer">
-            共 8 种基本数据类型：byte(1), short(2), int(4), long(8), float(4),
-            double(8), char(2), boolean(1字节处理)
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">17</div>
-        <div class="q-body">
-          <strong
-            >为什么程序的多线程功能是必要的？Java
-            语言中实现多线程的方法有哪两种？</strong
-          >
-          <div class="answer">
-            多线程的作用：提升 CPU 利用率、实现并发处理、提升程序响应速度。<br />两种实现方式：继承
-            Thread 类、实现 Runnable 接口。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">18</div>
-        <div class="q-body">
-          <strong>写出至少 5 个 Java 语言中的常用包</strong>
-          <div class="answer">
-            java.lang, java.util, java.io, java.net, java.sql, javax.swing 等。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">19</div>
-        <div class="q-body">
-          <strong
-            >JDBC 中 DriverManager、Connection、Statement 和 ResultSet
-            接口的功能？</strong
-          >
-          <div class="answer">
-            DriverManager：加载数据库驱动，获取数据库连接。<br />Connection：代表数据库连接会话，用于创建语句对象。<br />Statement：负责执行
-            SQL 语句。<br />ResultSet：封装查询返回的数据结果，提供数据遍历读取功能。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">20</div>
-        <div class="q-body">
-          <strong>面向对象编程中，什么是封装？</strong>
-          <div class="answer">
-            将类的成员变量私有化，隐藏内部实现细节，对外提供公共访问方法，以此保护数据安全。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">21</div>
-        <div class="q-body">
-          <strong>如何使用 JDK 编译与运行 Java 小程序？</strong>
-          <div class="answer">
-            编译：执行命令 javac 文件名.java，生成 class 字节码文件。<br />运行：编写
-            HTML 文件嵌入小程序代码，执行 appletviewer 文件名.html 运行。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">22</div>
-        <div class="q-body">
-          <strong>Java 语言中什么是构造方法？构造方法有什么作用？</strong>
-          <div class="answer">
-            构造方法：方法名与类名完全相同，没有返回值类型的特殊方法。<br />作用：创建类的对象、初始化对象的成员变量。
-          </div>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="q-title">23</div>
-        <div class="q-body">
-          <strong>使用 JDBC 开发数据库应用程序的主要步骤？</strong>
-          <div class="answer">
-            加载数据库驱动 → 获取数据库连接 → 创建语句对象 → 执行 SQL 语句 →
-            处理查询结果 → 关闭相关资源。
-          </div>
-        </div>
-      </div>
-
-      <footer>Java 核心简答题 · 复习专用</footer>
+</head>
+<body>
+<div class="paper">
+    <h1>Java 简答题 · 复习套卷</h1>
+    <div class="sub">
+        <span></span>
+        <span>共25题</span>
     </div>
-  </body>
+
+    <div class="question"><div class="q-title">01</div><div class="q-body"><strong>简述 Java 的运行机制。</strong><div class="answer">Java 程序运行时，必须经过编译和运行两个步骤。首先将扩展名为 java 的源文件进行编译，生成扩展名为 class 的字节码文件，然后 java 虚拟机将字节码文件进行解释执行，并将结果显示出来。</div></div></div>
+
+    <div class="question"><div class="q-title">02</div><div class="q-body"><strong>什么是构造方法？Java 中构造方法须同时满足的条件。</strong><div class="answer">构造方法是类的一个特殊成员，它会在类实例化对象时被自动调用。<br>构造方法须同时满足的条件为：方法名和类名相同；在方法名的前面没有返回值类型的声明；在方法中不能使用 return 语句返回一个值，但是可以单独写 return 语句来作为方法的结束。</div></div></div>
+
+    <div class="question"><div class="q-title">03</div><div class="q-body"><strong>什么是方法的重写？什么是方法的重载？两者有什么区别？</strong><div class="answer">在继承关系中，子类中需要对继承的方法进行一些修改，即为方法的重写。在一个程序中定义多个名称相同，但是参数的类型或个数不同的方法，即为方法的重载。<br>区别：发生位置不同（重载在类中，重写在继承关系中）；参数列表限制不同（重载必须不同，重写必须相同）；返回值类型（重载无关，重写必须一致）；访问权限（重载无关，重写子类方法权限不能小于父类方法权限）。</div></div></div>
+
+    <div class="question"><div class="q-title">04</div><div class="q-body"><strong>什么是自动装箱和自动拆箱？</strong><div class="answer">自动装箱是指将基本数据类型的变量赋给对应的包装类变量；自动拆箱是指将包装类对象类型直接赋给一个对应的基本数据类型变量。</div></div></div>
+
+    <div class="question"><div class="q-title">05</div><div class="q-body"><strong>简述什么是集合？并列举集合中常用的类和接口。</strong><div class="answer">集合像一个容器，专门用来存储 Java 对象（实际上是对象的引用），这些对象可以是任意的数据类型，并且长度可变。集合分为单列集合 Collection 和双列集合 Map。Collection 有两个子接口 List 和 Set。Map 接口的主要实现类有 HashMap 和 TreeMap。</div></div></div>
+
+    <div class="question"><div class="q-title">06</div><div class="q-body"><strong>什么是流？Java 语言中分为哪两种流？这两种流有何区别？</strong><div class="answer">在 Java 中，将通过不同输入输出设备（键盘、内存、显示器、网络等）之间的数据传输抽象表述为流。<br>按操作数据单位分：字节流（以字节为单位读写）和字符流（以字符为单位读写）。<br>按传输方向分：输入流（只能读取数据）和输出流（只能写入数据）。<br>按功能分：节点流（直接连接数据源）和处理流（封装节点流）。</div></div></div>
+
+    <div class="question"><div class="q-title">07</div><div class="q-body"><strong>简述 JDBC 中 Driver、Connection、Statement 和 ResultSet 的功能。</strong><div class="answer">Driver 接口是所有 JDBC 驱动程序必须实现的接口，专门提供给数据库厂商使用。Connection 接口代表 Java 程序和数据库的连接对象，只有获得该连接对象后，才能访问数据库并操作数据表。Statement 接口用于执行静态的 SQL 语句，并返回一个结果对象。ResultSet 接口用于保存 JDBC 执行查询时返回的结果集，该结果集封装在一个逻辑表格中。</div></div></div>
+
+    <div class="question"><div class="q-title">08</div><div class="q-body"><strong>用 Java 程序实现流式 Socket 通信，需要使用哪两个类？它们是如何定义的？</strong><div class="answer">需要使用 ServerSocket 类和 Socket 类。ServerSocket 可以如下定义：ServerSocket serverSocket = new ServerSocket(7788); Socket 可以如下定义：Socket socket = new Socket(InetAddress.getLocalHost(), 7788);</div></div></div>
+
+    <div class="question"><div class="q-title">09</div><div class="q-body"><strong>什么是多态？</strong><div class="answer">多态意味着一个对象有着多种形态，可以在特定的情况下表现不同的状态，从而对应着不同的属性和方法。简单的说，多态就是使用父类类型的变量引用子类对象，根据被引用子类对象的特性，程序会得到不同的运行效果。</div></div></div>
+
+    <div class="question"><div class="q-title">10</div><div class="q-body"><strong>简述什么是抽象类和什么是接口？</strong><div class="answer">在 Java 中，使用 abstract 关键字修饰的类称之为抽象类。抽象类是不能被实例化的，通常需要写一个子类来继承抽象类，同时实例化子类来获得该类的对象。抽象类通常用于表示一种抽象的概念。接口可以说是一种特殊的抽象类，接口中只能定义常量、抽象方法、静态方法和默认方法。要实现接口需要使用 interface 关键字。</div></div></div>
+
+    <div class="question"><div class="q-title">11</div><div class="q-body"><strong>简述字节流和字符流的区别？</strong><div class="answer">字节流的两个基类是 InputStream 和 OutputStream，字符流的两个基类是 Reader 和 Writer，它们都是 Object 类的直接子类。字节流是处理以 8 位字节为基本单位的字节流类；Reader 和 Writer 类是专门处理 16 位字节的字符流类。</div></div></div>
+
+    <div class="question"><div class="q-title">12</div><div class="q-body"><strong>简述 JDBC 编程步骤。</strong><div class="answer">（1）加载数据库驱动；（2）通过 DriverManager 获取数据库连接；（3）通过 Connection 对象获取 Statement 对象；（4）使用 Statement 执行 SQL 语句；（5）操作 ResultSet 结果集；（6）关闭连接，释放资源。</div></div></div>
+
+    <div class="question"><div class="q-title">13</div><div class="q-body"><strong>简述 TCP 协议和 UDP 协议。</strong><div class="answer">UDP 协议是无连接通信协议，数据的发送端和接收端不建立逻辑连接。UDP 协议消耗资源小，通信效率高，通常用于音频、视频和普通数据的传输，但不能保证数据的完整性。TCP 协议是面向连接的通信协议，传输数据前先在发送端和接收端建立逻辑连接，提供了可靠无差错的数据传输。TCP 连接中必须明确客户端与服务器端，每次连接的创建都需要经过“三次握手”。</div></div></div>
+
+    <div class="question"><div class="q-title">14</div><div class="q-body"><strong>简述 Java 应用程序与 Java 小程序的区别？</strong><div class="answer">运行环境不同：Java 应用程序可独立运行于计算机上，Java 小程序需要借助 Web 浏览器才能运行。功能不同：Java 应用程序功能相对更强大，可用于各种复杂的任务，Java 小程序通常扮演更为辅助性的角色。复杂度不同：Java 应用程序更复杂、更庞大，包含的代码也更多。运行方式不同：Java 应用程序可以通过命令行、脚本等方式运行，Java 小程序只能通过 Web 浏览器运行。</div></div></div>
+
+    <div class="question"><div class="q-title">15</div><div class="q-body"><strong>简述基本类型变量和引用类型变量的区别（举例说明）。</strong><div class="answer">基本类型变量：使用 byte、short、int、long、float、double、boolean、char 这八种类型声明出来的变量。引用类型变量：使用任意一个类、任意一个接口、任意一个数组所声明出来的变量，引用类型变量接收的只能是对象。例如：Student s = new Student(); 区别：基本数据类型在声明时系统就给它分配空间，引用则不同，它声明时只给变量分配了引用空间，而不分配数据空间。</div></div></div>
+
+    <div class="question"><div class="q-title">16</div><div class="q-body"><strong>简述 JDK 与 JRE 的关系。</strong><div class="answer">JRE 包含了 Java 虚拟机、Java 基础类库，是使用 Java 语言编写的程序运行所需要的软件环境，是提供给想运行 Java 程序的用户使用的。JDK 是程序员使用 Java 语言编写 Java 程序所需的开发工具包，是提供给程序员使用的。运行 Java 程序只需安装 JRE，如果需要编写 Java 程序，需要安装 JDK。</div></div></div>
+
+    <div class="question"><div class="q-title">17</div><div class="q-body"><strong>简述方法的重载与覆盖的区别。</strong><div class="answer">方法重载指在一个类中创建了多个方法，具有相同的方法名，但参数的个数不同、参数的数据类型不同、参数顺序不同。覆盖是指子类中定义的方法与父类中方法名相同，子类在调用这个同名方法时，默认调用它自己定义的方法，而将从父类那里继承来的方法“覆盖”住。重载是在一个类中有多个方法，方法名相同而参数不同；覆盖是指父类和子类中方法同名且拥有相同的参数列表，子类在调用时默认调用子类的同名方法而覆盖掉父类的方法。</div></div></div>
+
+    <div class="question"><div class="q-title">18</div><div class="q-body"><strong>什么是接口？为什么要定义接口？</strong><div class="answer">接口是一种用来定义程序的协议，它描述可属于任何类或结构的一组相关行为。接口的意义在于抽象、不拘细节，从而使同类事物在同一高度具有通用及可替代性。定义接口与定义类非常相似，接口是由常量和抽象方法组成的特殊类。一个类只能由一个父类，但是它可以同时实现若干个接口，即实现了多重继承。</div></div></div>
+
+    <div class="question"><div class="q-title">19</div><div class="q-body"><strong>InputStream、OutputStream、Reader 和 Writer 四个类的区别？</strong><div class="answer">OutputStream 和 InputStream 是字节输入和输出流。Reader 和 Writer 是字符流。字节流读写二进制文件，字符流读写文本文件。</div></div></div>
+
+    <div class="question"><div class="q-title">20</div><div class="q-body"><strong>什么是平台无关性？JAVA 语言是如何实现平台无关性的？</strong><div class="answer">Java 是与平台无关的语言，主要指用 Java 编写的应用程序不用修改就可在不同的软硬件平台上运行。Java 语言是靠 Java 虚拟机（JVM）在目标代码级实现平台无关性的。Java 源程序通过编译器会被转换成与平台无关的字节码，字节码是 JVM 的指令组，任何一种能够运行 Java 字节码的软件均可看做是 JVM。</div></div></div>
+
+    <div class="question"><div class="q-title">21</div><div class="q-body"><strong>自动类型转换的前提是什么？简述转换时的优先级顺序。</strong><div class="answer">前提：转换前的数据类型与转换后的数据类型兼容；转换后的数据类型的表示范围比转换前的数据类型的表示范围大。优先级顺序从低到高：byte, short, char, int, long, float, double。</div></div></div>
+
+    <div class="question"><div class="q-title">22</div><div class="q-body"><strong>简述 JAVA 程序中的成员变量和局部变量的区别。</strong><div class="answer">1）定义的位置不一样：成员变量在类体内部方法体外面，局部变量在方法体内部。2）作用范围不一样：成员变量作用范围是整个类，局部变量作用范围是方法体。3）默认值不一样：成员变量有默认值，局部变量没有默认值。4）内存的位置不一样：成员变量位于堆内存，局部变量位于栈内存。5）生命周期不一样：局部变量随着方法进栈而诞生、出栈而消亡，成员变量随着对象创建而诞生、GC 回收而消亡。</div></div></div>
+
+    <div class="question"><div class="q-title">23</div><div class="q-body"><strong>简述 JAVA 程序中对象的相等和指向它们的引用相等的区别。</strong><div class="answer">对象的相等，比的是内存中存放的内容是否相等。而引用相等，比较的是它们指向的内存地址是否相等。</div></div></div>
+
+    <div class="question"><div class="q-title">24</div><div class="q-body"><strong>什么是接口？简述接口与抽象类的区别。</strong><div class="answer">接口是用于完成特定功能的若干属性组织成相对独立的属性集合。定义接口与定义类非常相似，接口是由常量和抽象方法组成的特殊类。一个类只能由一个父类，但可以同时实现若干个接口，实现了多重继承。与类的继承不同的是，一个接口可以有一个以上的父接口，新接口将继承所有父接口中的属性和方法。</div></div></div>
+
+    <div class="question"><div class="q-title">25</div><div class="q-body"><strong>Java 实现多线程有哪两种途径？有什么区别？</strong><div class="answer">实现多线程的方法有两种：一种是继承 java.lang 包中的 Thread 类；另一种是用户在定义自己的类中实现 Runnable 接口。直接继承 Thread 类的特点是编写简单，可以直接操纵线程，但缺点是若继承 Thread 类，就不能再继承其他类。使用 Runnable 接口的特点是可以将 Thread 类与所要处理的任务的类分开，形成清晰的模型，还可以从其他类继承，从而实现多重继承的功能。</div></div></div>
+
+    <footer> Java 简答题 </footer>
+</div>
+</body>
 </html>
